@@ -1,7 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as dynamodb from "@aws-cdk/aws-dynamodb";
 
-export class CdkdynamoStack extends cdk.Stack {
+export class CdkdynamoFixedscaleStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
     
@@ -13,9 +13,11 @@ export class CdkdynamoStack extends cdk.Stack {
         name: "id",
         type: dynamodb.AttributeType.STRING,
       },
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      writeCapacity: 1,
+      readCapacity: 1,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       pointInTimeRecovery: true
     })
+
   }
 }
