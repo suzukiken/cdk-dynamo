@@ -5,6 +5,6 @@ To deploy Dynamo table.
 * `npm install`
 * `cdk deploy`
 
-[description](https://figmentresearch.com/aws/cdkdynamo)
+[description](https://note.figmentresearch.com/aws/cdkdynamo)
 
 
